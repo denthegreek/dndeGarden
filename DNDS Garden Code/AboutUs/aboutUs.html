@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        html{
+            background-color: rgb(34,34,34);
+        }
+        body{
+            visibility: hidden;
+        }
+        .animated {
+            animation: fadeIn 1.5s ease forwards;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./aboutUsStyles.css" id="stylesheet1">
+    <link rel="stylesheet" href="./aboutUsStylesMobile.css" id="stylesheet2">
+    <link rel="stylesheet" href="../Navigation/nav.html" id="stylesheet3">
+    <link rel="stylesheet" href="../Footer/footer.html" id="stylesheet4">
+
+    <link rel="icon" type="image/x-icon" href="../../dndsGarden.ico">
+    <script>
+        // Function to make body visible
+        function makeBodyVisible() {
+            document.body.style.visibility = "visible";
+            document.body.classList.add("animated"); // Add 'animated' class to body
+        }
+
+        // Check if all stylesheets are loaded
+        function checkAllStylesheets() {
+            var stylesheets = [
+                document.getElementById("stylesheet1"),
+                document.getElementById("stylesheet2"),
+                document.getElementById("stylesheet3"),
+                document.getElementById("stylesheet4")
+            ];
+
+            for (var i = 0; i < stylesheets.length; i++) {
+                if (!stylesheets[i].sheet) {
+                    return false; // Return false if any stylesheet is not loaded
+                }
+            }
+            return true; // Return true if all stylesheets are loaded
+        }
+
+        // Wait until all stylesheets are loaded or a timeout occurs
+        var intervalId = setInterval(function() {
+            if (checkAllStylesheets()) {
+                clearInterval(intervalId); // Stop checking once all stylesheets are loaded
+                makeBodyVisible(); // Make body visible once all stylesheets are loaded
+            }
+        }, 100); // Check every 100ms
+
+        // Fallback in case of a timeout
+        setTimeout(makeBodyVisible, 3000); // Ensure visibility after 3 seconds as a fallback
+    </script>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+    <main>
+        <div id="about-us"> 
+            <h1>About Us</h1>
+            <p>Welcome to DNDS Garden! We are your trusted partner in creating and maintaining beautiful gardens and outdoor spaces.</p>
+            
+            <h2>Our Mission</h2>
+            <p>At DNDS Garden, our mission is to bring your garden dreams to life with exceptional service and sustainable practices. We are committed to enhancing the beauty and health of your outdoor spaces.</p>
+            <div id="teamContainer">
+                <h2 id="ourTeam">Our Team</h2>
+                <p>Our team is composed of passionate gardeners, landscapers, and horticulturists who love what they do. We bring a wealth of experience and creativity to every project.</p>
+                
+                <h3>Daniel Green - Founder & CEO</h3>
+                <p>Daniel founded DNDS Garden with a vision to transform ordinary gardens into extraordinary spaces. With over 15 years of experience, he leads the company with a deep passion for nature and sustainability.</p>
+                
+                <h3>Jason Smith - Head Gardener</h3>
+                <p>Jason is an expert in plant care and garden design. His innovative ideas and meticulous attention to detail ensure that every garden thrives.</p>
+                
+                <h3>David Bloom - Landscape Architect</h3>
+                <p>David is the creative force behind our stunning landscape designs. His expertise in architecture and design transforms outdoor spaces into works of art.</p>
+                
+                <h3>Sarah Thorn - Operations Manager</h3>
+                <p>Sarah keeps everything running smoothly at DNDS Garden. Her organizational skills and customer-focused approach ensure a seamless experience for our clients.</p>
+        </div>
+        <div id="bottomRow">
+            <div>
+                <h2>Our Values</h2>
+                <ul>
+                    <li>Quality</li>
+                    <li>Sustainability</li>
+                    <li>Customer Satisfaction</li>
+                    <li>Innovation</li>
+                    <li>Teamwork</li>
+                </ul>
+            </div>
+            <div>
+                <h2>Contact Us</h2>
+                <p>Have a question or need our services? Reach out to us at <a href="mailto:info@dndsgarden.com">info@dndsgarden.info</a> or call us at (555) 555-5555. We look forward to helping you create the garden of your dreams!</p>
+            </div>
+        </div>
+            
+        </div>
+    </main>
+    <div id="footer-container">
+    </div>
+    <footer>
+        <script>
+        // Get the link element
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../Navigation/nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('nav-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Error fetching nav.html:', error));
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+        </script>
+    </footer>
+</body>
+</htm

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <div class="notification" id="notification">Appointment successfully submitted!</div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            html{
+                background-color: rgb(34,34,34);
+            }
+            body{
+                visibility: hidden;
+            }
+            .animated {
+                animation: fadeIn 1.5s ease forwards;
+            }
+        </style>
+
+        <link rel="stylesheet" href="./bookStyles.css" id="stylesheet1">
+        <link rel="stylesheet" href="./bookStylesMobile.css" id="stylesheet2">
+        <link rel="stylesheet" href="../Navigation/nav.html" id="stylesheet3">
+        <link rel="stylesheet" href="../Footer/footer.html" id="stylesheet4">
+
+        <link rel="icon" type="image/x-icon" href="../../dndsGarden.ico">
+        <script>
+            // Function to make body visible
+            function makeBodyVisible() {
+                document.body.style.visibility = "visible";
+                document.body.classList.add("animated"); // Add 'animated' class to body
+            }
+    
+            // Check if all stylesheets are loaded
+            function checkAllStylesheets() {
+                var stylesheets = [
+                    document.getElementById("stylesheet1"),
+                    document.getElementById("stylesheet2"),
+                    document.getElementById("stylesheet3"),
+                    document.getElementById("stylesheet4")
+                ];
+    
+                for (var i = 0; i < stylesheets.length; i++) {
+                    if (!stylesheets[i].sheet) {
+                        return false; // Return false if any stylesheet is not loaded
+                    }
+                }
+                return true; // Return true if all stylesheets are loaded
+            }
+    
+            // Wait until all stylesheets are loaded or a timeout occurs
+            var intervalId = setInterval(function() {
+                if (checkAllStylesheets()) {
+                    clearInterval(intervalId); // Stop checking once all stylesheets are loaded
+                    makeBodyVisible(); // Make body visible once all stylesheets are loaded
+                }
+            }, 100); // Check every 100ms
+    
+            // Fallback in case of a timeout
+            setTimeout(makeBodyVisible, 3000); // Ensure visibility after 3 seconds as a fallback
+        </script>
+    </head>
+    <div id="nav-placeholder"></div>
+    <main>
+        <div id="tabName">
+            <h1>Book an Appointment</h1>
+        </div>
+        <div class="mainRowContainer">
+            <div class="appointment-form">
+                <h2>Book an Appointment</h2>
+                <form id="appointmentForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+            
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+            
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+            
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+            
+                    <label for="time">Time</label>
+                    <input type="time" id="time" name="time" required>
+            
+                    <label for="notes">Additional Notes</label>
+                    <textarea id="notes" name="notes" rows="4"></textarea>
+            
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div></div>
+            <div id="decorationContainer">
+                <div>
+                    <h2>Feedback</h2>
+                    <div class="decorationSubContainer">
+                        <p>At DNDS Garden, we believe feedback is the soil in which our services grow. It’s vital for nurturing our commitment to excellence and customer satisfaction. Each piece of feedback is like a seed, potentially sprouting new ideas or improvements. It helps us understand our clients’ needs, ensuring that every hedge trimmed and every lawn mowed meets their expectations. Feedback guides our team to cultivate a garden of trust and reliability, allowing us to prune away inefficiencies and plant the seeds for a flourishing partnership. Your voice helps DNDS Garden bloom, making every landscape we touch a testament to shared growth and beauty.</p>
+                    </div>
+                </div>
+                <div>
+                    <h2>Contact Us</h2>
+                    <div class="decorationSubContainer">
+                        <article>
+                            <label for="tel">Tel</label>
+                            <ol id="tel">
+                                <li>(555) 555-5555</li>
+                                <li>(555) 555-5556</li>
+                                <li>(555) 555-5557</li>
+                            </ol>
+                        </article>
+                        <article>
+                            <label for="ourEmail">Email</label>
+                            <p id="ourEmail">info@dndsgarden.info</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="footer-container">
+        <!-- Footer will be loaded here -->
+    </div>
+    <footer>
+        <script>
+            // Get the link element
+            document.addEventListener("DOMContentLoaded", function() {
+                fetch('../Navigation/nav.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('nav-placeholder').innerHTML = data;
+                    })
+                    .catch(error => console.error('Error fetching nav.html:', error));
+            });
+            document.addEventListener("DOMContentLoaded", function() {
+                fetch('../Footer/footer.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('footer-container').innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading footer:', error));
+            });
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = document.getElementById('appointmentForm');
+                const dateInput = document.getElementById('date');
+                const timeSelect = document.getElementById('time');
+
+                // Set minimum date to one day after the current day
+                const today = new Date();
+                const minDate = new Date(today);
+                minDate.setDate(today.getDate() + 1);
+                const minDateString = minDate.toISOString().split('T')[0];
+                dateInput.setAttribute('min', minDateString);
+
+                // Populate time options (9:00 AM to 4:00 PM in half-hour intervals)
+                const startHour = 9;
+                const endHour = 16;
+                for (let hour = startHour; hour <= endHour; hour++) {
+                    for (let minute of [0, 30]) {
+                        const hourString = hour.toString().padStart(2, '0');
+                        const minuteString = minute.toString().padStart(2, '0');
+                        const timeString = `${hourString}:${minuteString}`;
+                        const option = document.createElement('option');
+                        option.textContent = timeString;
+                        option.value = timeString;
+                        timeSelect.appendChild(option);
+                    }
+                }
+
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    console.log('Form submission intercepted.');
+
+                    let isValid = true;
+                    const name = form.name.value.trim();
+                    const email = form.email.value.trim();
+                    const phone = form.phone.value.trim();
+                    const date = form.date.value;
+                    const time = form.time.value;
+
+                    // Validate name
+                    if (name === "") {
+                        isValid = false;
+                        alert("Please enter your name.");
+                    }
+
+                    // Validate email
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(email)) {
+                        isValid = false;
+                        alert("Please enter a valid email address.");
+                    }
+
+                    // Validate phone number
+                    const phonePattern = /^\d{10}$/;
+                    if (!phonePattern.test(phone)) {
+                        isValid = false;
+                        alert("Please enter a valid 10-digit phone number.");
+                    }
+
+                    // Validate date
+                    if (date === "") {
+                        isValid = false;
+                        alert("Please select a date.");
+                    }
+
+                    // Validate time
+                    if (time === "") {
+                        isValid = false;
+                        alert("Please select a time.");
+                    }
+
+                    if (isValid) {
+                        console.log('Form is valid.');
+                        // Show notification
+                        const notification = document.getElementById('notification');
+                        notification.style.display = 'block';
+                        setTimeout(() => {
+                            notification.style.display = 'none';
+                        }, 3000);
+
+                        // Optionally, you can clear the form
+                        form.reset();
+                    } else {
+                        console.log('Form is invalid.');
+                    }
+                });
+            });
+        </script>
+    </footer>
+</html>

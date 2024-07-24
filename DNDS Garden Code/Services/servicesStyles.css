@@ -1,0 +1,156 @@
+@media (min-aspect-ratio: 7/10){
+    /* Tab Name */
+    #tabName{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image: url("../Home/gardenPromo.jpg");
+        background-size: cover;
+        border-radius: 1rem;
+        color: #d2ebe9;
+    }
+    #tabName h1{
+        font-size: 5rem;
+        background-color: rgb(34,34,34,0.25);
+    }
+    /* Grid and Grid Items */
+    .grid-container {
+        display: grid;
+        grid-gap: 1rem;
+        width: 80%;
+        margin:  1rem auto 0;
+        border-radius: 1rem;
+        overflow: hidden;
+        grid-template-columns: 32% 32% 32% ;
+        background-color: transparent;
+    }
+    .grid-row-equalizer{
+        grid-auto-rows: 1fr;
+    }
+    .grid-item {
+        background-color: transparent;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .itemCard{
+        background: #26877F;
+        width: 100%;
+        min-height: 25rem;
+        height: 100%;
+        border-radius: 1rem;
+        overflow: auto;
+        cursor: default;
+        margin: none;
+        filter: brightness(0.75);
+        transition: filter 0.5s;
+        color: white;
+    }
+    .itemCard:hover{
+        filter: brightness(1);
+    }
+    .itemCard img{
+        width: 100%;
+        height: 10rem;
+        object-fit: cover;
+        object-position: top;
+    }
+    .itemCard h6{
+        font-size: 1rem;
+        text-decoration: underline;
+        margin: 1rem auto 1rem;
+    }
+    .itemCard p{
+        font-size: 0.9rem;
+        margin: 0.5rem auto 0.5rem;
+        text-align: center;
+    }
+    .itemCardBottom{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0 1rem 0;
+    }
+    /* Large Item (Outside The Grid) */
+    .largeItemCard{
+        width: 80%;
+        margin: 1rem auto 1rem;
+        height: fit-content;
+        border-radius: 1rem;
+        background-image: url(./leaf.jpg);
+        background-size: cover;
+        background-position: bottom;
+        padding: 1rem;
+        cursor: default;
+    }
+    .largeItemCard div{
+        background-color: rgb(0,0,0,0.85);
+        border-radius: 1rem;
+        border-top-left-radius: 0;
+        height: 100%;
+        padding: 1rem;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+    .largeItemCard h1{
+        width: fit-content;
+        padding: 1rem;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        background-color: rgb(0,0,0,0.85);
+        color: #26877F;
+    }
+    .largeItemCard h2{
+        width: 100%;
+        display: block;
+        text-decoration: underline;
+        color: lightgreen;
+    }
+    .largeItemCard ul{
+        width: 100%;
+    }
+    .largeItemCard li{
+        width: 95%;
+        float: right;
+        font-size: 1.1rem;
+        margin: 0.5rem;
+        color: #26877F;
+    }
+    .largeItemCard b{
+        color: lightgreen;
+        font-size: 1.15rem;
+    }
+    /* Round Items */
+    .roundItem{
+        width: 15rem;
+        height: 15rem;
+        background-color: #26877F;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: auto;
+        border: 0.25rem solid lightgreen;
+        box-shadow: inset 0 0 2.5rem black;
+        cursor: default;
+    }
+    .roundItem img{
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+        margin: 0;
+        padding: 0;
+    }
+    .roundItem h5{
+        color: greenyellow;
+        font-weight: bolder;
+        font-size: 1.5rem;
+    }
+    .roundItem p{
+        font-size: 1rem;
+        color: lightgreen;
+        font-weight: bolder;
+    }
+}

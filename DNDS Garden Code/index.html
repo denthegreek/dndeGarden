@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="./Home/style.css">
+        <link rel="stylesheet" href="./Home/styleMobile.css">
+        <link rel="icon" type="image/x-icon" href="../dndsGarden.ico">
+        <link rel="stylesheet" href="./Navigation/navStyles.css">
+        <link rel="stylesheet" href="./Footer/footer.css">
+    </head>
+    <header>
+        <img src="./Home/dndsGarden.png" alt="Lucky Schurb" id="logo">
+    </header>
+    <nav>
+        <ul>
+            <li>HOME</li>
+            <li><a href="./Services/services.html">SERVICES</a></li>
+            <li><a href="./Book/book.html">BOOK</a></li>
+            <li><a href="./AboutUs/aboutUs.html">ABOUT US</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="promo">
+            <div id="promoHeader">
+                <h1>New Customer Special Offer:</h1>
+                <h4>25% Off your first garden design consultation and service!</h4>
+            </div>
+            <article>
+                <ol>
+                    <li><b>Personalized Garden Design Consultation</b>: Meet with Jason, our expert garden architect, to discuss your vision and preferences. He will create a custom garden design tailored to your space and lifestyle.</li>
+                    <li><b>Comprehensive Garden Creation</b>: Our professional team of landscapers will bring Jason's design to life, ensuring every detail is perfect.</li>
+                    <li><b>Maintenance Tips and First Service</b>: Receive expert advice on maintaining your new garden and enjoy a complimentary first maintenance service to keep your oasis looking pristine.</li>
+                    <li><b>Additional 10% Off All Plants from Our Nursery</b>: As part of this offer, enjoy a 10% discount on any indoor or outdoor plants from our nursery, overseen by Maria. Choose from a wide selection of high-quality plants to complement your new garden design.</li>
+                </ol>
+            </article>
+        </div>
+        <div id="secondRow">
+            <div class="secondRowItem">
+                <img src="./Home/services.jpg" alt="service_img">
+                <div class="bottomItem">
+                    <h2>Services</h2>
+                    <p>Browse our indoor and outdoor gardening services and plans.</p>
+                    <button onclick="location.href = './Services/services.html'">Browse</button>
+                </div>
+            </div>
+            <div class="secondRowItem">
+                <img src="./Home/book.jpg" alt="book_img">
+                <div class="bottomItem">
+                    <h2>Book</h2>
+                    <p>Book an appointment so that we can give you an estimation for your personalized plan.</p>
+                    <button>Book Now</button>
+                </div>
+            </div>
+            <div class="secondRowItem">
+                <img src="./Home/aboutUs.jpeg" alt="about_us_img">
+                <div class="bottomItem">
+                    <h2>About Us</h2>
+                    <p>Based in Tuscon, Arizona, DNDS Garden is a medium-sized garden design firm</p>
+                    <button>Learn More</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="footer-container">
+
+    </div>
+    <footer>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                fetch('./Footer/footer.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('footer-container').innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading footer:', error));
+            });
+        </script>
+    </footer>
+</html>

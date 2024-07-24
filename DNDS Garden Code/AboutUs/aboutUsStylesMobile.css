@@ -1,0 +1,108 @@
+@media (max-aspect-ratio: 7/10) {
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #e0f7f4; /* Soft background color */
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* About Us Container */
+    #about-us {
+        width: 80%;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: rgba(38, 135, 127, 0.9); /* Darker background for better contrast */
+        border-radius: 1rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        color: #fff; /* White text color for readability */
+    }
+
+    #about-us h1 {
+        font-size: 2.5rem;
+        color: #d2ebe9; /* Softer color for headings */
+        margin-bottom: 1rem;
+    }
+
+    #about-us p {
+        font-size: 1rem;
+        margin: 0.5rem 0;
+        line-height: 1.6;
+        color: #e0f7f4; /* Light color for paragraphs */
+    }
+
+    /* Mission Section */
+    #about-us h2 {
+        font-size: 2rem;
+        color: #b4e1dd; /* Light green color */
+        margin-top: 1rem;
+        text-decoration: underline;
+    }
+
+    /* Team Members */
+    .team-member {
+        background-color: #1d6d63; /* Darker green for team member background */
+        margin: 1rem 0;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        color: #e0f7f4; /* Light color for text */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s;
+    }
+
+    #ourTeam{
+        margin-top: 0 !important;
+    }
+
+    .team-member:hover {
+        background-color: #144d45; /* Slightly darker on hover */
+    }
+
+    .team-member h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #b4e1dd; /* Light green for headings */
+    }
+
+    .team-member p {
+        font-size: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    #teamContainer{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+        background-color: rgba(34,34,34, 0.5);
+    }
+
+    /* Values Section */
+    #about-us ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    #about-us li {
+        font-size: 1.1rem;
+        margin: 0.5rem 0;
+        color: #d2ebe9; /* Softer color for list items */
+    }
+
+    /* Contact Section */
+    #about-us a {
+        color: #b4e1dd; /* Light green for links */
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    #about-us a:hover {
+        color: #8cc0b8; /* Slightly darker green on hover */
+    }
+
+    #bottomRow{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}

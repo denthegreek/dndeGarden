@@ -1,0 +1,122 @@
+@media (min-aspect-ratio: 7/10){
+    /* General Rules */
+    html{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    body{
+        animation: fadeIn 1.5s ease forwards;
+    }
+    /* Row One Main */
+    #promo{
+        width: 80%;
+        margin: auto;
+        padding: 1rem 1rem 1rem;
+        border-radius: 0.5rem;
+        background-image: url(./gardenPromo.jpg);
+        background-size: cover;
+    }
+    #promoHeader{
+        width: fit-content;
+        background-color: rgb(34, 34, 34, 0.9);
+        border-radius: 1rem;
+        padding: 0.75rem;
+        cursor: defaultd;
+    }
+    h1{
+        color: #26877F;
+    }
+    h4{
+        margin: 0.5rem 0.25rem 0;
+    }
+    #promo li{
+        margin: 1rem 2.5rem 1rem;
+    }
+    #promo b{
+        font-weight: bolder;
+        color: #26877F;
+    }
+    article{
+        margin: 1rem 0 0;
+        padding: 1rem;
+        background-color: rgb(34, 34, 34, 0.9);
+        border-radius: 1rem;
+        cursor: default;
+    }
+    /* Row Two Main */
+    #secondRow{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 1rem auto 1rem;
+        padding: 0;
+        width: 80%;
+    }
+    .secondRowItem{
+        width: 32%;
+        text-align: center;
+        background: rgb(0,136,143);
+        background: linear-gradient(180deg, rgba(41,91,93,1) 0%, rgba(0,136,143,0.21052170868347342) 99%);
+        border-radius: 0.5rem;
+        cursor: default;
+        overflow: hidden;
+
+        transition: background-color 0.25s;
+    }
+    .secondRowItem:hover{
+        background: rgb(0,136,143);
+    }
+    .secondRowItem img{
+        width: 100%;
+        margin: 0 0 1rem;
+        max-height: 7.5rem;
+        object-fit: cover;
+    }
+    .secondRowItem h2{
+        text-decoration: underline;
+    }
+    .secondRowItem button{
+        outline: none;
+        color: white;
+        background-color: rgb(34, 34, 34);
+        border: 0.15rem solid white;
+        font-size: 1rem;
+        font-weight: bolder;
+        padding: 0.2rem 0.5rem 0.2rem;
+        margin: 0.5rem;
+        border-radius: 1rem;
+        transition: filter 0.25s;
+        cursor: pointer;
+        min-width: 50%;
+    }
+    .secondRowItem button:active{
+        filter: brightness(0.5);
+    }
+    .secondRowItem p{
+        margin: 1.5rem 1rem;
+        font-size: 1rem;
+        min-height: 4rem;
+    }
+    /* Footer */
+    footer{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        color: #26877F;
+    }
+    footer div{
+        width: 50%;
+
+    }
+    footer img{
+        height: 3rem;
+    }
+    footer p{
+        text-align: right;
+        font-size: 0.8rem;
+        margin-bottom: 0.2rem;
+    }
+}

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            html{
+                background-color: rgb(34,34,34);
+            }
+            body{
+                visibility: hidden;
+            }
+            .animated {
+                animation: fadeIn 1.5s ease forwards;
+            }
+        </style>
+
+        <link rel="stylesheet" href="./servicesStyles.css" id="stylesheet1">
+        <link rel="stylesheet" href="./servicesStylesMobile.css" id="stylesheet2">
+        <link rel="stylesheet" href="../Navigation/nav.html" id="stylesheet3">
+        <link rel="stylesheet" href="../Footer/footer.html" id="stylesheet4">
+
+        <link rel="icon" type="image/x-icon" href="../../dndsGarden.ico">
+        <script>
+            // Function to make body visible
+            function makeBodyVisible() {
+                document.body.style.visibility = "visible";
+                document.body.classList.add("animated"); // Add 'animated' class to body
+            }
+    
+            // Check if all stylesheets are loaded
+            function checkAllStylesheets() {
+                var stylesheets = [
+                    document.getElementById("stylesheet1"),
+                    document.getElementById("stylesheet2"),
+                    document.getElementById("stylesheet3"),
+                    document.getElementById("stylesheet4")
+                ];
+    
+                for (var i = 0; i < stylesheets.length; i++) {
+                    if (!stylesheets[i].sheet) {
+                        return false; // Return false if any stylesheet is not loaded
+                    }
+                }
+                return true; // Return true if all stylesheets are loaded
+            }
+    
+            // Wait until all stylesheets are loaded or a timeout occurs
+            var intervalId = setInterval(function() {
+                if (checkAllStylesheets()) {
+                    clearInterval(intervalId); // Stop checking once all stylesheets are loaded
+                    makeBodyVisible(); // Make body visible once all stylesheets are loaded
+                }
+            }, 100); // Check every 100ms
+    
+            // Fallback in case of a timeout
+            setTimeout(makeBodyVisible, 3000); // Ensure visibility after 3 seconds as a fallback
+        </script>
+    </head>
+    <div w3-include-html="../Navigation/nav.html"></div>
+    <main>
+        <div id="nav-placeholder"></div>
+        <div id="tabName">
+            <h1>SERVICES</h1>
+        </div>
+        <div class="grid-container grid-row-equalizer">
+            <div class="grid-item">
+                <div class="itemCard">
+                    <img src="./jason.jpg" alt="">
+                    <h6>Garden Design Consultation</h6>
+                    <div class="itemCardBottom">
+                        <article>
+                            <p>
+                                Detailed overview of the personalized garden design consultation service, 
+                                including what to expect during the consultation.
+                            </p>
+                            <p>
+                                Jason is our head-gardner. He has extensively studied the science of agronomy, 
+                                which makes him the ideal professional to oversee a master-project.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="itemCard">
+                    <img src="./elaborateGarden.jpg" alt="">
+                    <h6>Comprehensive Garden Creation</h6>
+                    <div class="itemCardBottom">
+                        <p>
+                            Step-by-step explanation of the garden creation process, 
+                            from initial design to final implementation.
+                        </p>
+                        <p>
+                            Jason Turner is the creative force behind DNDS Garden's stunning garden designs. 
+                            With over 15 years of experience in landscape architecture, 
+                            he combines a deep knowledge of plants with a keen eye for aesthetics. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="itemCard">
+                    <img src="./mainentenance.jpg" alt="">
+                    <h6>Maintenance Services</h6>
+                    <div class="itemCardBottom">
+                        <p>
+                            Details about the complimentary first maintenance service 
+                            provided with new garden installations.
+                        </p>
+                        <p>
+                            Invest in the long-term beauty and health of your garden 
+                            with one of DNDS Garden’s comprehensive maintenance plans. 
+                            Our expert team is here to ensure your outdoor space remains a stunning retreat all year long.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="itemCard">
+                    <img src="./nursery.jpg" alt="">
+                    <h6>Nursery Discounts</h6>
+                    <div class="itemCardBottom">
+                        <p>
+                            A showcase of the types of plants available at the nursery, 
+                            with descriptions and care instructions.
+                        </p>
+                        <p>
+                            10% discount on select plants, including any terms and conditions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="itemCard">
+                    <img src="./specialOffer.jpg" alt="">
+                    <h6>Special Offers</h6>
+                    <div class="itemCardBottom">
+                        <p>
+                            Information about any ongoing promotions or special 
+                            offers for new and returning customers.
+                        </p>
+                        <p>
+                            Customer loyalty programs and the benefits they offers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="itemCard">
+                    <img src="../Home/book.jpg" alt="">
+                    <h6>Booking and Contact Information</h6>
+                    <div class="itemCardBottom">
+                        <p>
+                            Book an appointment so that we can give you an estimation for your personalized plan.
+                        </p>
+                        <p>
+                            Discover new exclusive offers.
+                        </p>
+                        <p>
+                            Learn about what we can do to deliver a garden of pure luxury and might.
+                        </p>
+                        <p>Call Us:<br/.>(555) 555-5555</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="largeItemCard">
+            <h1>Exclusive Services</h1>
+            <div>
+                <h2>Seasonal Garden Refresh</h2>
+                <ul>
+                    <li>
+                        <b>Seasonal Replanting</b>: Exclusive access to rare and seasonal plants 
+                        for replanting to ensure your garden always looks fresh and vibrant.
+                    </li>
+                    <li>
+                        <b>Seasonal Decorations</b>: Customized seasonal decorations, such as festive 
+                        lights, holiday-themed plant arrangements, and more.
+                    </li>
+                </ul>
+                <h2>VIP Maintenance Service</h2>
+                <ul>
+                    <li>
+                        <b>Personal Garden Caretaker</b>: A dedicated gardener assigned exclusively to your garden, providing daily care and maintenance.
+                    </li>
+                    <li>
+                        <b>24/7 Support</b>: Round-the-clock access to garden care and maintenance services to address any urgent needs or emergencies.
+                    </li>
+                    <li>
+                        <b>Advanced Health Monitoring</b>: Use of advanced technology to monitor soil health, plant growth, and pest control, ensuring optimal garden health.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="roundItem">
+                    <img src="./wetLeaves.jpeg" alt="">
+                    <div>
+                        <h5>Outdoor Plants</h5>
+                        <p>Perennials</p>
+                        <p>Annuals</p>
+                        <p>Shrubs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="roundItem">
+                    <img src="./flowers.jpg" alt="">
+                    <div>
+                        <h5>Indoor Plants</h5>
+                        <p>Succulents and Cacti</p>
+                        <p>Flowering Plants</p>
+                        <p>Foliage Plants</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="roundItem">
+                    <img src="./orchids.jpg" alt="">
+                    <div>
+                        <h5>Exotic Plants</h5>
+                        <p>Carnivorous Plants</p>
+                        <p>Tropical Plants</p>
+                        <p>Bamboos</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="itemCard">
+                    <img src="./waterLilies.jpg" alt="">
+                    <h6>Eco-Friendly Solutions</h6>
+                    <div class="itemCardBottom">
+                        <p>
+                            Implementation of sustainable gardening practices, including organic fertilizers, 
+                            composting systems, and water-saving irrigation techniques.
+                        </p>
+                        <p>
+                            10% discount on select plants, including any terms and conditions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="itemCard">
+                    <img src="./workshop.jpg" alt="">
+                    <h6>Exclusive Events and Workshops</h6>
+                    <div class="itemCardBottom">
+                        <p>
+                            Personalized gardening workshops with our experts, teaching you 
+                            advanced gardening techniques and tips.
+                        </p>
+                        <p>
+                            Invitations to exclusive garden parties, plant exhibitions, 
+                            and special events hosted by DNDS Garden.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="itemCard">
+                    <img src="./customGarden.jpg" alt="">
+                    <h6>Custom Features and Enhancements</h6>
+                    <div class="itemCardBottom">
+                        <p>
+                            Installation of luxury features such as outdoor kitchens, 
+                            fire pits, pergolas, and custom-designed patios.
+                        </p>
+                        <p>
+                            Integration of smart irrigation and lighting systems, allowing you to control your garden’s environment with your smartphone.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="footer-container">
+        <!-- Footer will be loaded here -->
+    </div>
+    <footer>
+        
+        <script>
+            // Get the link element
+        var link = document.getElementById('stylesheet');
+            document.addEventListener("DOMContentLoaded", function() {
+                fetch('../Navigation/nav.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('nav-placeholder').innerHTML = data;
+                    })
+                    .catch(error => console.error('Error fetching nav.html:', error));
+            });
+            document.addEventListener("DOMContentLoaded", function() {
+                fetch('../Footer/footer.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('footer-container').innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading footer:', error));
+            });
+        </script>
+    </footer>
+</html>
